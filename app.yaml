@@ -1,0 +1,19 @@
+application: lever
+version: 1
+api_version: 1
+runtime: python
+ 
+handlers:
+- url: /favicon.ico
+  static_files: static/favicon.ico
+  upload: static/favicon.ico
+- url: /robots.txt
+  static_files: static/robots.txt
+  upload: static/robots.txt
+- url: /google18673f7f485a2aea.html
+  static_files: static/google18673f7f485a2aea.html
+  upload: static/google18673f7f485a2aea.html
+- url: /static
+  static_dir: static
+- url: .*
+  script: server.py
