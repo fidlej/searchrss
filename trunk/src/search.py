@@ -65,7 +65,6 @@ def _extractSearcher(query):
 
 def search(query, daysBack=None, start=0):
     searcher, query = _extractSearcher(query)
-    logging.info("Using %r searcher", searcher)
     searchUrl = SEARCH_URL % searcher
     responseData = _search(searchUrl, query, daysBack, start)
     responseData["searcher"] = searcher
