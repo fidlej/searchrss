@@ -6,15 +6,14 @@ import re
 from django.utils import simplejson
 from src import fetch
 
-#TODO: where is the daterange: working?
 # List of searches from
 # http://code.google.com/apis/ajaxsearch/documentation/reference.html#_fonje_urlbase
 #SEARCHES = ("web", "local", "video", "blogs", "news", "books", "images", "patent")
+# But the 'daterange:' operator is working only for 'web'.
 SEARCHES = ("web",)
 SEARCH_URL = "http://ajax.googleapis.com/ajax/services/search/%s"
 SEARCHER_PATTERN = re.compile(r"\bsearch:([a-z]+)")
 
-#TODO: test the use of headers
 HEADERS = {
         "Referer": "http://lever.appspot.com/",
         }
