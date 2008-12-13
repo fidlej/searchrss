@@ -32,7 +32,7 @@ def _getNewResults(feed):
 def _convertToFeedEntry(feed, result):
     title = result["title"]
     link = result["unescapedUrl"]
-    summary = result["content"]
+    summary = result["content"] or " "
     visibleUrl = result["visibleUrl"]
     return FeedEntry(parent=feed,
             title=title, link=link, summary=summary, visibleUrl=visibleUrl)
