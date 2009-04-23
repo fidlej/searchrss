@@ -26,7 +26,3 @@ $ path/to/google_appengine/appcfg.py update .
 $ firefox http://your-app-name.appspot.com
 
 
-4) Ensure refreshing of the feeds:
-$ wget http://your-app-name.com/compute
-    ... do it regularly (use cron or http://host-tracker.com/ )
-
