@@ -1,0 +1,8 @@
+cron:
+- description: update a feed
+  url: /compute?what=feeds
+  schedule: every 2 minutes
+- description: update feed loads
+  url: /compute?what=loads
+  schedule: every 1 hours
+
