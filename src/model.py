@@ -19,10 +19,10 @@ class FeedEntry(db.Model):
     """
     index = db.IntegerProperty(default=0, required=True)
     updated = db.DateTimeProperty(auto_now=True)
-    link = db.LinkProperty(required=True)
-    title = db.StringProperty(required=True)
-    summary = db.TextProperty(required=True)
-    visibleUrl = db.TextProperty(required=True)
+    link = db.LinkProperty(required=True, indexed=False)
+    title = db.StringProperty(required=True, indexed=False)
+    summary = db.TextProperty(required=True, indexed=False)
+    visibleUrl = db.TextProperty(required=True, indexed=False)
 
 class FeedLoad(db.Model):
     """
