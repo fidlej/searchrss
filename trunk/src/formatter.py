@@ -5,10 +5,8 @@ import time
 
 from src import config
 
-RENDER = web.template.render("templates/", cache=not config.DEBUG)
 
 def install():
-    web.template.Template.globals["render"] = RENDER
     web.template.Template.globals["len"] = len
     web.template.Template.globals["int"] = int
     web.template.Template.globals["urlEncode"] = urlEncode
@@ -40,3 +38,11 @@ def formatDatetime(utcDt):
     return utcDt.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 install()
+RENDER = web.template.render("templates/", cache=not config.DEBUG)
+if hasattr(RENDER, "mod"):
+    # GAE_Render ignores later changes to globals.
+    # We need to define the "render" var directly.
+    RENDER.mod.render = RENDER
+else:
+    web.template.Template.globals["render"] = RENDER
+
