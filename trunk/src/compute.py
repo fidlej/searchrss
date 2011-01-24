@@ -9,7 +9,7 @@ def compute(what=None):
     Does one change in time to fit inside appengine timeout.
     """
     if not what:
-        if random.randint(0, 1) == 0:
+        if random.randint(0, 100) > 1:
             what = "feeds"
         else:
             what = "loads"
